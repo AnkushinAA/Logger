@@ -7,34 +7,33 @@ namespace Logger.Console;
 public class ConsoleColorConfig
 {
     /// <summary>
-    /// Метод класса ConsoleColor для определения цвета информационного текста в консоли
+    /// Свойство класса ConsoleColor для определения цвета информационного текста в консоли
     /// </summary>
     public ConsoleColor ColorInfo { get; set; }
     /// <summary>
-    /// Метод класса ConsoleColor для определения цвета текста предупреждений в консоли
+    /// Свойство класса ConsoleColor для определения цвета текста предупреждений в консоли
     /// </summary>
     public ConsoleColor ColorWarning { get; set; }
     /// <summary>
-    /// Метод класса ConsoleColor для определения цвета текста ошибок в консоли
+    /// Свойство класса ConsoleColor для определения цвета текста ошибок в консоли
     /// </summary>
     public ConsoleColor ColorError { get; set; }
     /// <summary>
-    /// Метод класса ConsoleColor для определения цвета текста выполнения в консоли
+    /// Свойство класса ConsoleColor для определения цвета текста успешного выполнения в консоли
     /// </summary>
     public ConsoleColor ColorSuccess { get; set; }
     /// <summary>
-    /// Метод класса ConsoleColor для определения цвета пользовательского текста в консоли
+    /// Свойство класса ConsoleColor для определения цвета пользовательского текста в консоли
     /// </summary>
     public ConsoleColor ColorCustom { get; set; }
     /// <summary>
-    /// Статический метод класса ConsoleColorConfig для определения конфигурации методов из файла
+    /// Статический метод для определения конфигурации методов из файла
     /// </summary>
     /// <param name="path">Путь к файлу конфигурации</param>
-    /// <returns>Объект класса ConsoleColorConfig с необходимыми установками цвета текста</returns>
-
+    /// <returns>Объект собственного класса с необходимыми установками цвета текста</returns>
     public static ConsoleColorConfig Init(string path)
     {
-        using var file = new FileStream(path, FileMode.Open, FileAccess.Read);        
+        using var file = new FileStream(path, FileMode.Open, FileAccess.Read);
         return JsonSerializer.DeserializeAsync<ConsoleColorConfig>(file).Result;
-    }    
+    }
 }

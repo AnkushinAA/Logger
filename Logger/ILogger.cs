@@ -20,7 +20,7 @@ public interface ILogger
     /// <param name="message">Текст сообщения</param>
     public void Error(string message);
     /// <summary>
-    /// Метод вывода сообщений выполнения
+    /// Метод вывода сообщений успешного выполнения
     /// </summary>
     /// <param name="message">Текст сообщения</param>
     public void Success(string message);
